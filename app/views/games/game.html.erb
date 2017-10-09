@@ -1,0 +1,30 @@
+<div id="game" class="container">
+  <div class="grid">
+    <h1>Welcome to the longest word-game!</h1>
+    <h2>Here is your grid:</h2>
+    <p><%= @start %></p>
+  </div>
+
+<!--   <div class="answer">
+    <h2>What's your best shot?</h2>
+
+    <p></p>
+  </div> -->
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div id="answer_box">
+        <form id="answer_form" action="/score" method="get">
+          <div class="form-group">
+            <label for="answer">What's your best shot?</label>
+            <input class="form-control" type="text" id="answer" name="answer" placeholder="What's your answer?">
+            <input type="hidden" name="start_time" value="<%= @start_time %>">
+            <input type="hidden" name="grid" value="<%= @grid.join %>">
+          </div>
+          <input type="submit" value="Go on!" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
